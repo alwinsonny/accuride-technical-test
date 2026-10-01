@@ -1,0 +1,17 @@
+{
+    "name": "alwin/module-product-badge",
+    "description": "Translatable product badge, badge-aware product names and a productDetails GraphQL query.",
+    "type": "magento2-module",
+    "license": "MIT",
+    "require": {
+        "php": "~8.2.0||~8.3.0||~8.4.0",
+        "magento/framework": "*",
+        "magento/module-catalog": "*",
+        "magento/module-eav": "*",
+        "magento/module-store": "*"
+    },
+    "autoload": {
+        "files": ["registration.php"],
+        "psr-4": { "Alwin\\ProductBadge\\": "" }
+    }
+}
