@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="alwin_productbadge_append_badge_to_name"
+                type="Alwin\ProductBadge\Plugin\Catalog\Model\ProductNamePlugin"
+                sortOrder="10"/>
+    </type>
+</config>
