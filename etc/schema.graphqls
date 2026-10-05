@@ -1,0 +1,17 @@
+type Query {
+    productDetails(
+        sku: String! @doc(description: "SKU of the product to look up.")
+    ): ProductDetails
+        @resolver(class: "Alwin\\ProductBadge\\Model\\Resolver\\ProductDetails")
+        @cache(cacheIdentity: "Alwin\\ProductBadge\\Model\\Resolver\\ProductDetails\\Identity")
+        @doc(description: "Returns key product details and the translated badge for the store view set in the Store header.")
+}
+
+type ProductDetails @doc(description: "Product details for the requested store view.") {
+    sku: String @doc(description: "Product SKU.")
+    name: String @doc(description: "Product name, including the badge in square brackets when one is set.")
+    price: Float @doc(description: "Final price in the store view's currency.")
+    currency: String @doc(description: "Currency code of the price, e.g. GBP or EUR.")
+    stock_status: String @doc(description: "In stock or Out of stock, translated for the store view.")
+    badge: String @doc(description: "Translated badge label, or null when no badge is set.")
+}
