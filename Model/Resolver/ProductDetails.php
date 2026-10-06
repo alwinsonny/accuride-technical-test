@@ -47,7 +47,7 @@ class ProductDetails implements ResolverInterface
 
         $product = $this->getProduct($sku, $store);
 
-        $basePrice = (float) $product->getPriceInfo()
+        $price = (float) $product->getPriceInfo()
             ->getPrice(FinalPrice::PRICE_CODE)
             ->getAmount()
             ->getValue();
@@ -56,7 +56,7 @@ class ProductDetails implements ResolverInterface
             'entity_id' => (int) $product->getId(), // used by the cache identity
             'sku' => $product->getSku(),
             'name' => $this->nameFormatter->format((string) $product->getData('name'), $product, $storeId),
-            'price' => $this->priceCurrency->convertAndRound($basePrice, $store),
+            'price' => $this->priceCurrency->round($price),
             'currency' => $store->getCurrentCurrencyCode(),
             'stock_status' => $this->isInStock($product->getSku(), $store)
                 ? __('In stock')->render()
