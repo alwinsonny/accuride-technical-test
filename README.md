@@ -124,7 +124,7 @@ Response for `Store: de`:
         "productDetails": {
             "sku": "24-MB01",
             "name": "Sprite Yoga Strap 6 foot [Neu]",
-            "price": 19.16,
+            "price": 16.38,
             "currency": "EUR",
             "stock_status": "Auf Lager",
             "badge": "Neu"
